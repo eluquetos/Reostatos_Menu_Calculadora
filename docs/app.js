@@ -1,6 +1,8 @@
 const APPS=[
-  {id:"Reostatos_1_rama_1iny",name:"1 nodo · 1 inyección",code:"1INY",injections:1,description:"Una misma inyección de campo alimenta las dos ramas para calcular R11 y R12. La regulación conserva una fuente común.",accent:"orange"},
-  {id:"Reostatos_1_rama_2iny",name:"1 nodo · 2 inyecciones",code:"2INY",injections:2,description:"La inyección A calcula R11 y la inyección B calcula R12. La regulación utiliza una sola fuente para ambas ramas.",accent:"cyan"}
+  {id:"Reostatos_1_rama_1iny",name:"1 nodo · 2 ramas · 1 inyección",code:"2R / 1INY",branches:2,injections:1,description:"Una misma inyección de campo alimenta las dos ramas para calcular R11 y R12. La regulación conserva una fuente común.",accent:"orange"},
+  {id:"Reostatos_1_rama_2iny",name:"1 nodo · 2 ramas · 2 inyecciones",code:"2R / 2INY",branches:2,injections:2,description:"La inyección A calcula R11 y la inyección B calcula R12. La regulación utiliza una sola fuente para ambas ramas.",accent:"cyan"},
+  {id:"Reostatos_1_nodo_3_ramas_1iny",name:"1 nodo · 3 ramas · 1 inyección",code:"3R / 1INY",branches:3,injections:1,description:"Una medición común calcula R11, R12 y R13. La regulación alimenta las tres ramas en paralelo.",accent:"violet"},
+  {id:"Reostatos_1_nodo_3_ramas_3iny",name:"1 nodo · 3 ramas · 3 inyecciones",code:"3R / 3INY",branches:3,injections:3,description:"Tres inyecciones independientes calculan R11, R12 y R13; la regulación utiliza una sola fuente.",accent:"pink"}
 ];
 const BASE="https://eluquetos.github.io/";
 const $=id=>document.getElementById(id);
@@ -11,7 +13,7 @@ function renderMenu(){
     <article class="app-card accent-${app.accent}">
       <div class="card-top"><span class="index">${String(index+1).padStart(2,"0")}</span><span class="code">${app.code}</span></div>
       <div><p class="card-label">REÓSTATOS</p><h3>${app.name}</h3><p class="description">${app.description}</p></div>
-      <div class="specs"><span><b>1</b> nodo</span><span><b>2</b> ramas</span><span><b>${app.injections}</b> ${app.injections===1?"inyección":"inyecciones"} de campo</span></div>
+      <div class="specs"><span><b>1</b> nodo</span><span><b>${app.branches}</b> ramas</span><span><b>${app.injections}</b> ${app.injections===1?"inyección":"inyecciones"} de campo</span></div>
       <button type="button" data-app="${app.id}">Abrir calculadora <span aria-hidden="true">→</span></button>
     </article>`).join("");
 }
