@@ -2,7 +2,8 @@ const APPS=[
   {id:"Reostatos_1_rama_1iny",name:"1 nodo · 2 ramas · 1 inyección",code:"2R / 1INY",branches:2,injections:1,description:"Una misma inyección de campo alimenta las dos ramas para calcular R11 y R12. La regulación conserva una fuente común.",accent:"orange"},
   {id:"Reostatos_1_rama_2iny",name:"1 nodo · 2 ramas · 2 inyecciones",code:"2R / 2INY",branches:2,injections:2,description:"La inyección A calcula R11 y la inyección B calcula R12. La regulación utiliza una sola fuente para ambas ramas.",accent:"cyan"},
   {id:"Reostatos_1_nodo_3_ramas_1iny",name:"1 nodo · 3 ramas · 1 inyección",code:"3R / 1INY",branches:3,injections:1,description:"Una medición común calcula R11, R12 y R13. La regulación alimenta las tres ramas en paralelo.",accent:"violet"},
-  {id:"Reostatos_1_nodo_3_ramas_3iny",name:"1 nodo · 3 ramas · 3 inyecciones",code:"3R / 3INY",branches:3,injections:3,description:"Tres inyecciones independientes calculan R11, R12 y R13; la regulación utiliza una sola fuente.",accent:"pink"}
+  {id:"Reostatos_1_nodo_3_ramas_3iny",name:"1 nodo · 3 ramas · 3 inyecciones",code:"3R / 3INY",branches:3,injections:3,description:"Tres inyecciones independientes calculan R11, R12 y R13; la regulación utiliza una sola fuente.",accent:"pink"},
+  {id:"Reostato_1_rama_1iny_uni",name:"1 nodo · 2 ramas · 2 inyecciones · unifilar",code:"2R / UNI",branches:2,injections:2,description:"Dos mediciones independientes calculan R11 y R12. La regulación utiliza una fuente común y genera un diagrama unifilar con los resultados.",accent:"cyan"}
 ];
 const BASE="https://eluquetos.github.io/";
 const $=id=>document.getElementById(id);
