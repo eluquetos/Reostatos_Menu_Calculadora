@@ -1,0 +1,4 @@
+.reostatos-theme{--orange:#ff477e;--pink:#ff6b00}.reostatos-theme .menu-view{background:radial-gradient(circle at 8% -10%,#ff477e1d,transparent 30%),radial-gradient(circle at 96% 8%,#18d1c01c,transparent 28%),var(--bg)}
+.reostatos-theme .brand-mark{background:linear-gradient(135deg,#ff477e,#ff6b00)}
+.reostatos-grid{grid-template-columns:repeat(2,1fr)}.reostatos-grid .app-card:nth-child(n){grid-column:span 1;min-height:370px}
+@media(max-width:700px){.reostatos-grid{grid-template-columns:1fr}.reostatos-grid .app-card:nth-child(n){grid-column:1;min-height:310px}}
