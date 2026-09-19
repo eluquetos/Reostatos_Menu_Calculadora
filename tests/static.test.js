@@ -2,6 +2,7 @@ const assert=require("node:assert/strict"),fs=require("node:fs"),path=require("n
 const root=path.resolve(__dirname,"../docs"),html=fs.readFileSync(path.join(root,"index.html"),"utf8"),app=fs.readFileSync(path.join(root,"app.js"),"utf8"),css=fs.readFileSync(path.join(root,"styles.css"),"utf8");
 for(const file of ["index.html","styles.css","theme.css","app.js","manifest.webmanifest","icon.svg","sw.js"])assert.ok(fs.existsSync(path.join(root,file)),file+" ausente");
 for(const id of ["menu-view","app-grid","viewer","back-menu","open-full","app-frame"])assert.ok(html.includes(`id="${id}"`),id+" ausente");
+assert.ok(html.includes("<b>5</b><span>calculadoras</span>"),"contador de calculadoras incorrecto");
 for(const name of ["Reostatos_1_rama_1iny","Reostatos_1_rama_2iny","Reostatos_1_nodo_3_ramas_1iny","Reostatos_1_nodo_3_ramas_3iny","Reostato_1_rama_1iny_uni"])assert.ok(app.includes(name),name+" ausente");
 for(const label of ["1 nodo · 2 ramas · 1 inyección","1 nodo · 2 ramas · 2 inyecciones","1 nodo · 3 ramas · 1 inyección","1 nodo · 3 ramas · 3 inyecciones","1 nodo · 2 ramas · 2 inyecciones · unifilar"])assert.ok(app.includes(label),label+" ausente");
 assert.ok(app.includes("history.pushState"));assert.ok(app.includes("popstate"));assert.ok(css.includes("100dvh"));
